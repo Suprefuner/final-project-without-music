@@ -1,0 +1,359 @@
+/* USE LOCAL FONT ----------------------------------*/
+@font-face {
+  font-family: "tc";
+  src: url("./assets/font/STYuanTC.woff");
+}
+
+/* GENERAL SETTING ----------------------------------*/
+:root {
+  --display-font: "tc";
+
+  --wrapper-padding: 3.5rem;
+
+  /*COLOR */
+  --color-neutral: #535c67;
+  --color-primary: #4169e2;
+
+  /* EFFECT */
+  --container-border-radius: 70px;
+  --ranking-tag-border-radius: 50px;
+  --border-radius-sm: 10px;
+  --border-radius-md: 15px;
+  --border-radius-lg: 25px;
+
+  --shadow: 0 0 5rem -1rem rgb(0, 0, 0, 0.15);
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.4rem !important;
+  font-family: var(--display-font) !important;
+  color: var(--color-neutral) !important;
+}
+
+main {
+  /* width: 390px; */
+}
+
+section {
+  width: 100%;
+}
+
+img {
+  vertical-align: middle;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0 !important;
+}
+
+.heading--3 {
+  font-weight: bold !important;
+}
+
+.wrapper {
+  background-color: white;
+  padding: var(--wrapper-padding);
+  border-top-left-radius: var(--container-border-radius);
+}
+
+.hidden {
+  display: none;
+}
+
+/* SECTION START ----------------------------------*/
+.section--start {
+  height: 100vh;
+
+  background-image: url("./assets/images/start-page/start3x.png");
+  background-position: top;
+  background-size: cover;
+
+  position: relative;
+}
+
+.walking-man-icon {
+  position: absolute;
+  right: 0;
+  bottom: 2rem;
+}
+
+.chat-box {
+  position: absolute;
+  bottom: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80%;
+  padding: 2.5rem;
+  background-color: white;
+  text-align: center;
+
+  border-radius: var(--border-radius-lg);
+}
+
+.chat-box:after {
+  content: "";
+
+  position: absolute;
+  right: 3rem;
+  bottom: -3rem;
+  width: 3rem;
+  aspect-ratio: 1;
+
+  border-top: 15px solid white;
+  border-right: 15px solid white;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.heading--2 {
+  margin-bottom: 1rem;
+
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(0, 0, 0, 0.2);
+}
+
+.button-start {
+  width: 100%;
+  padding: 0.75rem 3rem;
+
+  color: white;
+  background-color: var(--color-neutral);
+
+  border: none;
+  border-radius: var(--border-radius-lg);
+}
+
+.copy-right {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  bottom: 1rem;
+}
+
+/* SECTION QUESTION ----------------------------------*/
+
+.section--question {
+  background-image: url("./assets/images/question/bgimage.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding-top: 25rem;
+}
+
+.section--question .wrapper {
+  padding: 6rem 4rem;
+}
+
+.answers__list > *:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.answers__item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  /* background-color: #f3f5fc; */
+  box-shadow: 0 0 3rem -0.5rem rgb(0, 0, 0, 0.15);
+  border-radius: var(--border-radius-md);
+}
+
+.answers__item--active {
+  background-color: #f3f5fc;
+  box-shadow: none;
+}
+
+.answer-number {
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 3rem;
+
+  background-color: #ffd233;
+
+  scale: 1.2;
+}
+
+/* SECTION RESULT ----------------------------------*/
+.section--result {
+  /* background-color: var(--color-primary); */
+  background-image: url("./assets/images/result-page-bg/result-bottleCover.png");
+  padding-top: 15rem;
+}
+
+.section--result .wrapper {
+  position: relative;
+}
+
+.wrapper > *:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.image-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-50%);
+
+  width: 20rem;
+  aspect-ratio: 5/3;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+.image-container:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+
+  background-image: radial-gradient(var(--color-primary), transparent);
+  filter: blur(30px);
+  scale: 0.75;
+}
+
+.result--name {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.result--ranking {
+  width: max-content;
+  padding: 0.5rem 3rem;
+  margin-left: auto;
+
+  background-color: var(--color-primary);
+
+  color: white;
+  font-weight: normal;
+
+  border-top-left-radius: var(--ranking-tag-border-radius);
+  border-bottom-left-radius: var(--ranking-tag-border-radius);
+  transform: translateX(var(--wrapper-padding));
+}
+
+.result--pairs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.pair-group {
+  display: grid;
+  place-items: center;
+  gap: 0.5rem;
+
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius-md);
+}
+
+.pair-title {
+  font-weight: bold !important;
+}
+
+.pairs-img {
+  width: 8rem;
+  aspect-ratio: 1;
+}
+
+.pairs-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.trek-recommendation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  margin-top: 1.5rem;
+
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+}
+
+.mountain-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mountain-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* fontawsome icon */
+.fas {
+  color: var(--color-primary);
+}
+
+.trek-group {
+  display: flex;
+  gap: 1rem;
+  font-weight: bold;
+}
+
+.trek-group:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.trek-group span {
+  min-width: max-content;
+}
+
+/* BOOTSTRAP SLIDER >>>>>>>>>>>>>>>>> */
+.carousel {
+  position: relative;
+}
+
+.carousel-item {
+  /* FIXME */
+  /* hard coded, bad practice */
+  height: 165px;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-indicators {
+  position: absolute;
+  /* transform: translateY(150%); */
+}
+
+.carousel-inner {
+  border-radius: var(--border-radius-sm);
+}
