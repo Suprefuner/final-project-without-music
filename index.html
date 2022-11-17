@@ -12,6 +12,10 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <script src="main.js" type="module" defer></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
@@ -30,6 +34,39 @@
     ></script>
   </head>
   <body>
+    <audio loop preload="auto" class="bg-music hidden">
+      your browser is not supported
+    </audio>
+    <div class="sound-group">
+      <i class="fas fa-volume-mute"></i>
+    </div>
+    <div class="cover">
+      <div class="information-container">
+        <div class="information-content">
+          <h2 class="heading--2">This is title</h2>
+          <div class="img-container">
+            <img
+              src="./assets/images/2022-11-11_3.58.10.png"
+              alt="rubbish information "
+            />
+          </div>
+          <p class="information-paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
+            aliquid ad sed. A accusamus dolores, impedit iure quae magni
+            voluptatibus. Lorem ipsum, dolor sit amet consectetur adipisicing
+            elit. Voluptate quidem eum ipsa dolorem nemo iste quibusdam. Soluta
+            id sint autem aperiam nostrum harum, delectus placeat perferendis?
+            Aspernatur consectetur doloremque autem veritatis exercitationem
+            consequuntur harum eaque recusandae accusantium asperiores nostrum
+            incidunt architecto voluptate delectus, corrupti nihil, obcaecati
+            praesentium eligendi eos aliquid.
+          </p>
+        </div>
+        <div class="button-container">
+          <i class="fas fa-angle-right button-arrow"></i>
+        </div>
+      </div>
+    </div>
     <main class="main">
       <!-- SECTION START ------------------------------ -->
       <section class="section--start">
@@ -40,164 +77,18 @@
           height="120"
         ></iconify-icon>
         <div class="chat-box">
-          <h2 class="heading--2">行山啦喂!</h2>
-          <button class="button-start">開始測驗</button>
+          <h2 class="heading--2 animate__animated animate__wobble">
+            行山啦喂!
+          </h2>
+          <button class="button-start button">開始測驗</button>
         </div>
         <div class="copy-right">&copy;copyright by JJ22CM</div>
       </section>
       <!-- SECTION QUESTION ------------------------------ -->
-      <section class="section--question hidden">
-        <!-- <div class="wrapper">
-        <h2 class="question">你喺選擇行山嘅時候會唔會預先制訂計劃行程？</h2>
-
-        <div class="answers">
-          <ul class="answers__list">
-            <li class="answers__item">
-              <div class="answer-number">1</div>
-              <div class="answer">會啊，寫得詳細啲清楚啲啊嘛</div>
-            </li>
-            <li class="answers__item">
-              <div class="answer-number">2</div>
-              <div class="answer">點會呀 呢啲即興就行得㗎喇</div>
-            </li>
-            <li class="answers__item">
-              <div class="answer-number">3</div>
-              <div class="answer">朋友約就去</div>
-            </li>
-          </ul>
-        </div>
-      </div> -->
-      </section>
+      <section class="section--question hidden"></section>
 
       <!-- SECTION RESULT ---------------------------------- -->
-      <section class="section--result hidden">
-        <!-- <div class="wrapper">
-        <div class="image-container"></div>
-        <h2 class="result--name">膠樽蓋</h2>
-        <h3 class="result--ranking heading--3">山徑垃圾 排行NO.1</h3>
-        <p class="result--description">
-          你喺群體入面經常扮演齒輪嘅角色，你覺得自己可有可無，但係其實你嘅角色相當重要，如果缺少咗你，就會好似倒水咁款，知咩料啦。所以俾啲自信，即使你比其他人細小，但係都唔可以自卑。
-        </p>
-        <div class="result--pairs">
-          <div class="pair-group pair-group--best">
-            <h4 class="pair-title">最佳拍檔</h4>
-            <div class="pairs-img"></div>
-          </div>
-          <div class="pair-group pair-group--worst">
-            <h4 class="pair-title">酒肉朋友</h4>
-            <div class="pairs-img"></div>
-          </div>
-        </div>
-
-        <div class="trek-recommendation-group">
-          <h3 class="heading--3">適合你的行山路線</h3>
-          <div class="trek-recommendation">
-            <div class="mountain-group">
-              <i class="fas fa-map-marker-alt"></i>
-              <h4 class="mountain-name">田灣山</h4>
-            </div>
-            <div class="trek-ranking-group">
-              <div class="trek-difficulty trek-group">
-                <span class="difficulty-text">難度</span>
-                <div class="difficulty-stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                </div>
-              </div>
-              <div class="trek-view trek-group">
-                <span class="view-text">景觀</span>
-                <div class="view-stars">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star-half-alt"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="trek-photo-group">
-          <h3 class="heading--3">photo</h3>
-          <div
-            id="carouselExampleIndicators"
-            class="carousel slide"
-            data-bs-ride="true"
-          >
-            <div class="carousel-indicators">
-              <button
-                type="button button-carousel"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="Slide 1"
-              ></button>
-              <button
-                type="button button-carousel"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="1"
-                aria-label="Slide 2"
-              ></button>
-              <button
-                type="button button-carousel"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide-to="2"
-                aria-label="Slide 3"
-              ></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  src="./assets/images/mountain images/1.jpg"
-                  class="d-block w-100 h-100"
-                  alt="trek-photo"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./assets/images/mountain images/2.jpg"
-                  class="d-block w-100"
-                  alt="trek-photo"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./assets/images/mountain images/3.jpg"
-                  class="d-block w-100"
-                  alt="trek-photo"
-                />
-              </div>
-            </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-      </div> -->
-      </section>
+      <section class="section--result hidden"></section>
     </main>
   </body>
 </html>

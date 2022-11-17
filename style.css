@@ -6,21 +6,24 @@
 
 /* GENERAL SETTING ----------------------------------*/
 :root {
+  /* FONT */
   --display-font: "tc";
 
+  /* SIZE */
   --wrapper-padding: 3.5rem;
+  --app-width: 390px;
 
   /*COLOR */
   --color-neutral: #535c67;
+  --color-neutral-light: #e9e9e9;
   --color-primary: #4169e2;
 
-  /* EFFECT */
+  /* UTILIY */
   --container-border-radius: 70px;
   --ranking-tag-border-radius: 50px;
   --border-radius-sm: 10px;
   --border-radius-md: 15px;
   --border-radius-lg: 25px;
-
   --shadow: 0 0 5rem -1rem rgb(0, 0, 0, 0.15);
 }
 
@@ -38,17 +41,22 @@ html {
 }
 
 body {
+  height: 100vh;
+
   font-size: 1.4rem !important;
   font-family: var(--display-font) !important;
   color: var(--color-neutral) !important;
 }
 
 main {
-  /* width: 390px; */
+  width: 100vw;
+  height: 100%;
 }
 
 section {
   width: 100%;
+  height: 100%;
+  user-select: none;
 }
 
 img {
@@ -71,19 +79,36 @@ ol {
   border-top-left-radius: var(--container-border-radius);
 }
 
+/* HELPER CLASS ----------------------------------------- */
+
 .hidden {
+  display: none;
+}
+
+.phone-movement {
+  right: 40vw;
+}
+
+.content-movement {
+  translate: 0 !important;
+}
+
+.arrow-animation {
+  transform: rotate(180deg);
+}
+
+/* SECTION INFORMATION ----------------------------------*/
+
+.cover,
+.information-container {
   display: none;
 }
 
 /* SECTION START ----------------------------------*/
 .section--start {
-  height: 100vh;
-
-  background-image: url("./assets/images/start-page/start3x.png");
+  background-image: url("./assets/images/start-page/start-up.png");
   background-position: top;
   background-size: cover;
-
-  position: relative;
 }
 
 .walking-man-icon {
@@ -99,13 +124,14 @@ ol {
   transform: translateX(-50%);
 
   width: 80%;
-  padding: 2.5rem;
+  padding: 3rem;
   background-color: white;
   text-align: center;
 
   border-radius: var(--border-radius-lg);
 }
 
+/* create chat box triangle */
 .chat-box:after {
   content: "";
 
@@ -122,43 +148,66 @@ ol {
 }
 
 .heading--2 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 
   font-size: 3rem;
   font-weight: bold;
   color: rgb(0, 0, 0, 0.2);
 }
 
-.button-start {
+.button {
   width: 100%;
   padding: 0.75rem 3rem;
 
   color: white;
   background-color: var(--color-neutral);
 
+  font-size: 2rem;
+
   border: none;
   border-radius: var(--border-radius-lg);
+
+  box-shadow: 3px 5px 0 0 rgb(0, 0, 0, 0.75);
+  transition: 0.2s;
+}
+
+.button:active {
+  translate: 1.5px 2.5px;
+  box-shadow: none;
 }
 
 .copy-right {
   position: absolute;
+  bottom: 1rem;
   left: 50%;
   translate: -50%;
-  bottom: 1rem;
 }
 
 /* SECTION QUESTION ----------------------------------*/
-
 .section--question {
   background-image: url("./assets/images/question/bgimage.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top;
-  padding-top: 25rem;
+}
+
+@media only screen and (min-width: 375px) {
+  .section--question {
+    padding-top: 24.5vh;
+  }
 }
 
 .section--question .wrapper {
   padding: 6rem 4rem;
+  height: 100%;
+
+  border-top-left-radius: var(--container-border-radius);
+  border-bottom-left-radius: var(--border-radius-lg);
+  border-bottom-right-radius: var(--border-radius-lg);
+}
+
+.answers {
+  margin-top: 5rem;
 }
 
 .answers__list > *:not(:last-child) {
@@ -170,12 +219,20 @@ ol {
   align-items: center;
   gap: 2rem;
 
-  /* background-color: #f3f5fc; */
   box-shadow: 0 0 3rem -0.5rem rgb(0, 0, 0, 0.15);
   border-radius: var(--border-radius-md);
+
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.answers__item--active {
+.answers__item:hover {
+  color: white;
+  background-color: #a7a7a7;
+}
+
+.answers__item:active {
+  color: var(--color-neutral);
   background-color: #f3f5fc;
   box-shadow: none;
 }
@@ -198,13 +255,17 @@ ol {
 
 /* SECTION RESULT ----------------------------------*/
 .section--result {
-  /* background-color: var(--color-primary); */
-  background-image: url("./assets/images/result-page-bg/result-bottleCover.png");
   padding-top: 15rem;
+  overflow-y: scroll;
 }
 
 .section--result .wrapper {
   position: relative;
+}
+
+.section--result::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
 }
 
 .wrapper > *:not(:last-child) {
@@ -319,6 +380,10 @@ ol {
   color: var(--color-primary);
 }
 
+.fas:not(:last-child) {
+  margin-right: 3px;
+}
+
 .trek-group {
   display: flex;
   gap: 1rem;
@@ -333,7 +398,7 @@ ol {
   min-width: max-content;
 }
 
-/* BOOTSTRAP SLIDER >>>>>>>>>>>>>>>>> */
+/* BOOTSTRAP SLIDER >>>>>>>>>>>>>>>>>>>>>>>> */
 .carousel {
   position: relative;
 }
@@ -356,4 +421,204 @@ ol {
 
 .carousel-inner {
   border-radius: var(--border-radius-sm);
+}
+
+.button-group {
+  display: flex;
+  gap: 2rem;
+}
+
+.button-restart {
+  background-color: var(--color-primary);
+}
+
+/*  */
+.sound-group {
+  position: absolute;
+  left: 5vw;
+  bottom: 3rem;
+  cursor: pointer;
+}
+
+.sound-group .fas {
+  font-size: 5rem;
+  color: var(--color-neutral);
+  transition: 0.2s;
+}
+
+.sound-group .fas:hover {
+  color: black;
+}
+
+/* SECTION RWD -----------------------------------------*/
+/* desktop mode */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(./assets/images/start-page/desktop-ud-lr.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* to make information slide works and show the side button properly */
+    position: relative;
+    z-index: -1000;
+  }
+
+  main {
+    width: var(--app-width);
+    height: max(90vh, 83rem);
+
+    border-radius: var(--border-radius-lg);
+
+    /* create a fake phone shape */
+    box-shadow: 0 0 0 2rem black, 0 0 0 2.5rem grey,
+      -3rem 3rem 3rem 1rem rgb(0, 0, 0, 0.2);
+
+    position: relative;
+    right: 20vw;
+    transition: 0.2s;
+  }
+
+  /* create fake phone side button */
+  main:before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: -3.5rem;
+    z-index: -100;
+
+    width: 2rem;
+    height: 7rem;
+    background-color: black;
+
+    border-radius: var(--border-radius-sm);
+
+    /* prettier-ignore */
+    box-shadow: 
+    0 9rem 0 0 black, 
+    calc(var(--app-width) + 5rem) 3rem 0 black,
+    calc(var(--app-width) + 5rem) 6rem 0 black;
+  }
+
+  /* create fake phone dynamic island */
+  main:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 20rem;
+    height: 3rem;
+    background-color: black;
+
+    transform: translateX(-50%);
+
+    border-bottom-left-radius: var(--border-radius-md);
+    border-bottom-right-radius: var(--border-radius-md);
+  }
+
+  section {
+    border-radius: var(--border-radius-lg);
+  }
+
+  .cover {
+    display: block;
+    width: 40vw;
+    height: 60%;
+
+    clip-path: polygon(
+      0% -20px,
+      calc(100% + 20px) -20px,
+      calc(100% + 20px) calc(100% + 20px),
+      0% calc(100% + 20px)
+    );
+
+    position: relative;
+    left: calc(390px + 2rem);
+    /* to show side button properly */
+    z-index: -100;
+
+    transition: 0.2s;
+  }
+
+  .information-container {
+    display: flex;
+    position: absolute;
+
+    background-color: white;
+    width: 40vw;
+    height: 100%;
+
+    border-top-right-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+    box-shadow: -3px 3px 3rem -1rem rgb(0, 0, 0, 0.2);
+
+    translate: calc(-50% + 5rem);
+    transition: 0.2s;
+
+    overflow: hidden;
+  }
+
+  .information-content {
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+    overflow-y: scroll;
+  }
+
+  /* scrollbar customazation */
+  .information-content::-webkit-scrollbar {
+    width: auto;
+  }
+
+  .information-content::-webkit-scrollbar-track {
+    background-color: blue;
+  }
+
+  .information-content::-webkit-scrollbar-thumb {
+    background-color: green;
+  }
+
+  .information-content::-webkit-scrollbar-thumb:hover {
+    background-color: darkgreen;
+  }
+
+  .img-container {
+    margin-bottom: 3rem;
+  }
+
+  .img-container img {
+    width: 100%;
+  }
+
+  .button-container {
+    width: 5rem;
+    font-size: 3rem;
+
+    display: grid;
+    place-content: center;
+
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  .button-container:hover {
+    background-color: var(--color-neutral-light);
+  }
+
+  .button-arrow {
+    color: black !important;
+    padding: 1rem;
+    transition: 0.5s;
+  }
+
+  .sound-group {
+    left: auto;
+    right: 5vw;
+    bottom: 3rem;
+  }
 }
