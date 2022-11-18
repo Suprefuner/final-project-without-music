@@ -1,7 +1,7 @@
 "use strict"
 // IMPORT DATA ---------------------------------
-import { resultData } from "./result.js"
-import { questions } from "./question.js"
+// import { resultData } from "./result.js"
+// import { questions } from "./question.js"
 
 // SELECT ELEMENTS ---------------------------------
 const r = document.querySelector(":root")
@@ -18,6 +18,17 @@ const btnSoundController = document.querySelector(".sound-group")
 
 let questionIndex = 0
 let score = 0
+
+// GET DATA BY FETCH API -----------------------------------
+
+const getData = async (url) => {
+  const res = await fetch(url)
+  const data = await res.json()
+  return data
+}
+
+const questions = await getData("./questions.json")
+const resultData = await getData("./result.json")
 
 // BG MUSIC SETTING -----------------------------------------
 
@@ -54,8 +65,8 @@ btnStart.addEventListener("click", startTest)
 
 // RENDER QUESTIONS -----------------------------------------
 // SECTION
-const renderQuestion = () => {
-  const { question, answers } = questions[questionIndex]
+const renderQuestion = async () => {
+  const { question, answers } = await questions[questionIndex]
   const markup = `
     <div class="wrapper">
       <h2 class="question">${question}</h2>
@@ -122,7 +133,7 @@ const renderStar = function (n) {
 }
 
 const renderResult = function (result) {
-  const resultIndex = Math.round((result - 10) / 2)
+  const resultIndex = Math.floor((result - 15) / 4)
 
   const { id, name, pairs, description, trekRecommend, color, photo } =
     resultData[resultIndex]
@@ -208,7 +219,7 @@ const renderResult = function (result) {
               <img
                 src="./assets/images/mountain-images/${trekRecommend.name}/${
               i + 1
-            }.jpg"
+            }.png"
                 class="d-block w-100 h-100"
                 alt="trek-photo"
               />
