@@ -189,18 +189,29 @@ ol {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: top;
-  padding-top: 23vh;
+}
+
+@media only screen and (min-width: 320px) {
+  .section--question {
+    padding-top: 18rem;
+  }
 }
 
 @media only screen and (min-width: 375px) {
   .section--question {
-    padding-top: 27vh;
+    padding-top: 22rem;
   }
 }
 
 @media only screen and (min-width: 425px) {
   .section--question {
-    padding-top: 24.5vh;
+    padding-top: 24.5rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .section--question {
+    padding-top: 22.5rem;
   }
 }
 
@@ -477,7 +488,8 @@ ol {
 
   main {
     width: var(--app-width);
-    height: max(90vh, 83rem);
+    height: 85vh;
+    /* height: calc(var(--app-width) * 19 / 9); */
 
     border-radius: var(--border-radius-lg);
 
