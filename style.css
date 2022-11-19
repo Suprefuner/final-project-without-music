@@ -139,8 +139,9 @@ svg {
 .chat-box {
   position: absolute;
   bottom: 18%;
-  /* bottom: 22%; */
   left: 50%;
+  z-index: 10000;
+
   transform: scale(0.7) translateX(calc(-50% / 0.7));
 
   width: 80%;
@@ -156,18 +157,19 @@ svg {
   content: "";
 
   position: absolute;
-  right: -0.7rem;
-  bottom: -2rem;
-  width: 3rem;
+  right: 0rem;
+  bottom: -3rem;
+
+  width: 5rem;
   aspect-ratio: 1;
 
   scale: 1.2;
   rotate: -27deg;
 
-  border-top: 15px solid white;
-  border-right: 15px solid white;
-  border-left: 15px solid transparent;
-  border-bottom: 15px solid transparent;
+  border-top: 2.5rem solid white;
+  border-right: 2.5rem solid white;
+  border-left: 2.5rem solid transparent;
+  border-bottom: 2.5rem solid transparent;
 }
 
 .heading--2 {
@@ -665,7 +667,7 @@ svg {
     content: "";
 
     position: absolute;
-    right: 3rem;
+    right: 5rem;
     bottom: -3rem;
 
     scale: 1;
@@ -815,7 +817,7 @@ svg {
   }
 
   /* SECTION SUN ANIMATION ----------------------------------- */
-  svg {
+  .sun {
     display: block;
 
     position: absolute;
@@ -831,7 +833,7 @@ svg {
     transition: fill 1s;
   }
 
-  svg:hover .one {
+  .sun:hover .one {
     fill: #df353d;
   }
   .two {
