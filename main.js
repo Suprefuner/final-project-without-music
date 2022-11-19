@@ -34,7 +34,7 @@ const resultData = await getData("./result.json")
 
 const getRandomNumber = () => Math.ceil(Math.random() * 5)
 bgMusic.src = `./assets/audios/bg-${getRandomNumber()}.mp3`
-bgMusic.volume = 0.2
+bgMusic.volume = 0.3
 
 // FUNCTIONALTY >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // SHOW INFORMATION SLIDE ------------------------------------
@@ -114,20 +114,25 @@ questionPage.addEventListener("click", (e) => nextQuestion(e))
 // RENDER RESULT ---------------------------------------------
 // SECTION
 const renderStar = function (n) {
-  // check if there is half star
-  let isHalf = false
-  if (n % 1 !== 0) isHalf = true
+  const stars = new Array(5).fill(``)
 
-  // if just 0.5 star
-  if (n < 1) {
-    return '<i class="fas fa-star-half-alt"></i>'
-  }
+  let starText = stars
+    .map((star) => {
+      if (n >= 1) {
+        n -= 1
+        return `<i class="fas fa-star"></i>`
+      }
 
-  const stars = Array.from({ length: Math.floor(n) })
+      if (n === 0.5) {
+        n -= 0.5
+        return `<i class="fas fa-star-half-alt"></i>`
+      }
 
-  let starText =
-    stars.map((_) => `<i class="fas fa-star"></i>`).join("") +
-    (isHalf ? '<i class="fas fa-star-half-alt"></i>' : "")
+      if (n === 0) {
+        return `<i class="far fa-star"></i>`
+      }
+    })
+    .join("")
 
   return starText
 }
@@ -169,6 +174,11 @@ const renderResult = function (result) {
       <div class="trek-recommendation-group">
         <h3 class="heading--3">最啱你嘅行山路線</h3>
         <div class="trek-recommendation">
+          <div class="more-info">
+            <a href=${trekRecommend.link} target="_blank">
+              更多資訊
+            </a>
+          </div>
           <div class="mountain-group">
             <i class="fas fa-map-marker-alt"></i>
             <h4 class="mountain-name">${trekRecommend.name}</h4>
@@ -252,10 +262,20 @@ const renderResult = function (result) {
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+        <span class="remark">資料來源 綠洲 Oasistrek 
+          <a href="www.oasistrek.com">
+            www.oasistrek.com
+          </a>
+        </span>
       </div>
       <div class="button-group">
-        <button class="button-restart button">再嚟一次</button>
-        <button class="button-screenshot button">影張靚相</button>
+        <div class="button-restart button">再嚟一次</div>
+        <div class="button-link button">
+         <a href="https://www.facebook.com/mynaturediary/" target="_blank">
+          <i class="fab fa-facebook"></i>
+          <span>我的山海日誌</span>
+         </a>
+        </div>
       </div>
     </div>
   `
@@ -264,7 +284,8 @@ const renderResult = function (result) {
   resultPage.style.backgroundImage = `url('./assets/images/result-page-bg/result-${id}.png')`
 
   // change the theme color
-  r.style.setProperty("--color-primary", color)
+  r.style.setProperty("--color-primary", color.base)
+  r.style.setProperty("--color-primary-dark", color.dark)
   resultPage.insertAdjacentHTML("beforeend", markup)
 }
 
@@ -298,3 +319,16 @@ const controlBGMusic = function () {
 }
 
 btnSoundController.addEventListener("click", controlBGMusic)
+
+// CONTROL CURSOR -----------------------------------------------
+const cursor = document.querySelector(".cursor")
+
+const moveCursor = (e) => {
+  const mouseY = e.clientY
+  const mouseX = e.clientX
+
+  cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`
+}
+
+document.addEventListener("mousemove", moveCursor)
+document.addEventListener("mousedown", moveCursor)

@@ -17,6 +17,7 @@
   --color-neutral: #535c67;
   --color-neutral-light: #e9e9e9;
   --color-primary: #4169e2;
+  --color-primary-dark: #000;
 
   /* UTILIY */
   --container-border-radius: 70px;
@@ -38,6 +39,8 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: inherit;
+
+  cursor: none;
 }
 
 body {
@@ -46,6 +49,8 @@ body {
   font-size: 1.4rem !important;
   font-family: var(--display-font) !important;
   color: var(--color-neutral) !important;
+
+  overflow: hidden;
 }
 
 main {
@@ -67,6 +72,13 @@ ul,
 ol {
   list-style: none;
   padding: 0 !important;
+}
+
+a,
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
 }
 
 .heading--3 {
@@ -160,20 +172,26 @@ ol {
   padding: 0.75rem 3rem;
 
   color: white;
-  background-color: var(--color-neutral);
+  background-color: var(--color-primary);
 
   font-size: 2rem;
+  text-align: center;
 
   border: none;
   border-radius: var(--border-radius-lg);
 
-  box-shadow: 3px 5px 0 0 rgb(0, 0, 0, 0.75);
+  box-shadow: 3px 5px 0 0 var(--color-primary-dark);
   transition: 0.2s;
 }
 
 .button:active {
   translate: 1.5px 2.5px;
   box-shadow: none;
+}
+
+.button-start {
+  background-color: var(--color-neutral);
+  box-shadow: 3px 5px 0 0 rgba(0, 0, 0, 0.75);
 }
 
 .copy-right {
@@ -240,7 +258,7 @@ ol {
   box-shadow: 0 0 3rem -0.5rem rgb(0, 0, 0, 0.15);
   border-radius: var(--border-radius-md);
 
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: 0.2s;
 }
 
@@ -268,7 +286,7 @@ ol {
 
   background-color: #ffd233;
 
-  scale: 1.2;
+  scale: 1.3;
 }
 
 /* SECTION RESULT ----------------------------------*/
@@ -380,6 +398,44 @@ ol {
   box-shadow: var(--shadow);
   border-radius: var(--border-radius-md);
   padding: 1.5rem;
+
+  transition: 0.2s;
+
+  position: relative;
+}
+
+.trek-recommendation:hover {
+  scale: 1.05;
+}
+
+.more-info {
+  position: absolute;
+  inset: 0;
+
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-md);
+
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.more-info a {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.8rem;
+}
+
+.more-info a:hover {
+  color: white;
+}
+
+.trek-recommendation:hover .more-info {
+  opacity: 1;
 }
 
 .mountain-group {
@@ -394,11 +450,12 @@ ol {
 }
 
 /* fontawsome icon */
-.fas {
+.fas,
+.far {
   color: var(--color-primary);
 }
 
-.fas:not(:last-child) {
+:is(.fas, .far):not(:last-child) {
   margin-right: 3px;
 }
 
@@ -443,11 +500,40 @@ ol {
 
 .button-group {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
 .button-restart {
+  --shadow-color: var(--color-primary);
   background-color: var(--color-primary);
+}
+
+.button-link {
+  position: relative;
+  padding: 0;
+}
+
+.button-link a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-lg);
+  padding: 1rem;
+}
+
+.button-link a:hover {
+  color: white;
+}
+
+.button-link i {
+  font-size: 3rem;
+  position: absolute;
+
+  top: 50%;
+  left: 2rem;
+
+  transform: translateY(-50%);
 }
 
 /*  */
@@ -455,7 +541,7 @@ ol {
   position: absolute;
   left: 5vw;
   bottom: 3rem;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .sound-group .fas {
@@ -544,6 +630,7 @@ ol {
     border-radius: var(--border-radius-lg);
   }
 
+  /* SECTION INFORMATION SLIDER ----------------------------------- */
   .cover {
     display: block;
     width: 40vw;
@@ -623,13 +710,24 @@ ol {
     margin-bottom: 2rem;
   }
 
+  .heading--3 + .heading--3 {
+    margin-top: 3rem;
+  }
+
   .remark {
     width: 100%;
     display: inline-block;
-    margin-block: 1rem;
 
-    text-align: center;
     font-size: 1.2rem;
+    margin-block: 1rem;
+  }
+
+  .remark.center {
+    text-align: center;
+  }
+
+  .remark a {
+    color: var(--color-neutral);
   }
 
   .img-container img {
@@ -644,7 +742,7 @@ ol {
     place-content: center;
 
     transition: 0.2s;
-    cursor: pointer;
+    /* cursor: pointer; */
   }
 
   .button-container:hover {
@@ -661,5 +759,57 @@ ol {
     left: auto;
     right: 5vw;
     bottom: 3rem;
+  }
+
+  /* SECTION CURSOR ----------------------------------- */
+  .cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    pointer-events: none;
+
+    width: 8rem;
+    aspect-ratio: 1;
+    background-image: url("./assets/images/cursor/Emoji\ Pointing\ Up\ -\ Copy@1-1904x1001.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* SECTION SUN ANIMATION ----------------------------------- */
+  svg {
+    position: absolute;
+    top: 5rem;
+    left: 18rem;
+
+    width: 18rem;
+    animation: rotation 60s linear infinite;
+  }
+  .one {
+    transition: fill 1s;
+  }
+
+  svg:hover .one {
+    fill: #df353d;
+  }
+
+  .two {
+    fill: #ffce00;
+  }
+  .one {
+    fill: #ffb000;
+  }
+  .middle {
+    fill: #ffff00;
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }

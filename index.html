@@ -34,21 +34,71 @@
     ></script>
   </head>
   <body>
+    <!------------------------- CURSOR ----------------------------->
+    <!-- SECTION  -->
+    <div class="cursor"></div>
+
+    <!------------------------- BG MUSIC ----------------------------->
+    <!-- SECTION  -->
     <audio loop preload="auto" class="bg-music hidden">
       your browser is not supported
     </audio>
     <div class="sound-group">
       <i class="fas fa-volume-mute"></i>
     </div>
+    <!-------------------- BG SUN ANIMATION ------------------------->
+    <!-- SECTION  -->
+    <svg version="1.1" x="0px" y="0px" viewBox="0 0 32 32" class="sun">
+      <path
+        class="one"
+        d="M16,26c1.1,0,2,0.9,2,2v2c0,1.1-0.9,2-2,2s-2-0.9-2-2v-2C14,26.9,14.9,26,16,26z"
+      />
+      <path
+        class="one"
+        d="M16,6c-1.1,0-2-0.9-2-2V2c0-1.1,0.9-2,2-2s2,0.9,2,2v2C18,5.1,17.1,6,16,6z"
+      />
+      <path
+        class="one"
+        d="M30,14c1.1,0,2,0.9,2,2s-0.9,2-2,2h-2c-1.1,0-2-0.9-2-2s0.9-2,2-2H30z"
+      />
+      <path
+        class="one"
+        d="M6,16 c0,1.1-0.9,2-2,2H2c-1.1,0-2-0.9-2-2s0.9-2,2-2h2C5.1,14,6,14.9,6,16z"
+      />
+      <path
+        class="two"
+        d="M25.9,23.1l1.4,1.4c0.8,0.8,0.8,2,0,2.8s-2,0.8-2.8,0l-1.4-1.4c-0.8-0.8-0.8-2,0-2.8S25.1,22.3,25.9,23.1z"
+      />
+      <path
+        class="two"
+        d=" M6.1,8.9L4.7,7.5c-0.8-0.8-0.8-2,0-2.8s2-0.8,2.8,0l1.4,1.4c0.8,0.8,0.8,2,0,2.8S6.9,9.7,6.1,8.9z"
+      />
+      <path
+        class="two"
+        d="M25.9,8.9c-0.8,0.8-2,0.8-2.8,0s-0.8-2,0-2.8l1.4-1.4c0.8-0.8,2-0.8,2.8,0s0.8,2,0,2.8L25.9,8.9z"
+      />
+      <path
+        class="two"
+        d="M6.1,23.1c0.8-0.8,2-0.8,2.8,0s0.8,2,0,2.8l-1.4,1.4c-0.8,0.8-2,0.8-2.8,0s-0.8-2,0-2.8C4.7,24.5,6.1,23.1,6.1,23.1z"
+      />
+      <circle r="8" cx="16" cy="16" fill="#df353d"></circle>
+    </svg>
+
+    <!------------------ INFROMATION SLIDER ----------------------->
+    <!-- SECTION  -->
     <div class="cover">
       <div class="information-container">
         <div class="information-content">
           <div class="logo-container">
-            <img
-              src="./assets/images/my-nature-diary/My-Nature-Diary_Logo.png"
-              alt="my_nature_diary_logo"
-              class="my-nature-diary-logo"
-            />
+            <a href="https://ecobus.org.hk/diary/" target="_blank"
+              ><img
+                src="./assets/images/my-nature-diary/My-Nature-Diary_Logo.png"
+                alt="my_nature_diary_logo"
+                class="my-nature-diary-logo"
+            /></a>
+            <p class="introduction">
+              「我的山海日誌」計劃結合淨灘/淨山行動、公民科學、環境教育，期望透過每次活動讓參加者了解山間/海洋廢棄物議題。
+            </p>
           </div>
           <div class="img-container">
             <img
@@ -56,7 +106,7 @@
               alt="rubbish information "
             />
           </div>
-          <span class="remark">2021香港山徑垃圾長期監測結果</span>
+          <span class="remark center">2021香港山徑垃圾長期監測結果</span>
           <li>
             2021年共收集74筆淨山數據，360人次參與，清理海岸線總長328公里，覆蓋超過55條路線，清理廢棄物總重451公斤，執走21674件垃圾。
           </li>
@@ -72,6 +122,17 @@
             夏天才出現的垃圾：蚊貼；冬天才出現的垃圾：暖包。
             夏天雨季時(6月、8月、10月)山徑旁及休息位置雜草叢生，煙頭被丟棄的數目跟冬天除草後有明顯的差別，有可能是垃圾在草叢中難被看見，也有可能是亂丟煙頭到草裡易引起山火。
           </p>
+
+          <span class="remark">
+            資料來源：My Nature Diary -
+            <a
+              href="https://ecobus.org.hk/diary/2021/12/26/2021report/"
+              target="_blank"
+              class="info-link"
+            >
+              https://ecobus.org.hk/diary/2021/12/26/2021report/</a
+            >
+          </span>
           <img
             src="./assets/images/my-nature-diary/山徑廢棄物成份分析-1024x759.jpg"
             alt="result table"
@@ -95,7 +156,7 @@
           <h2 class="heading--2 animate__animated animate__wobble">
             行山啦喂!
           </h2>
-          <button class="button-start button">開始測驗</button>
+          <div class="button-start button">開始測驗</div>
         </div>
         <div class="copy-right">&copy;copyright by JJ22CM</div>
       </section>
