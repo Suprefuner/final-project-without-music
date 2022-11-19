@@ -302,6 +302,7 @@ svg {
 
 .section--result .wrapper {
   position: relative;
+  padding-bottom: 0;
 }
 
 .section--result::-webkit-scrollbar {
@@ -541,12 +542,17 @@ svg {
   transform: translateY(-50%);
 }
 
-/*  */
+.footer-copy-right {
+  height: 6rem;
+  text-align: center;
+  line-height: 5rem;
+}
+
+/* SECTION SOUND -------------------------------------- */
 .sound-group {
   position: absolute;
   left: 5vw;
   bottom: 3rem;
-  /* cursor: pointer; */
 }
 
 .sound-group .fas {

@@ -276,8 +276,10 @@ const renderResult = function (result) {
           <span>我的山海日誌</span>
          </a>
         </div>
+        <div class="footer-copy-right">&copy;copyright by JJ22CM</div> 
       </div>
     </div>
+    
   `
 
   resultPage.innerHTML = ``
