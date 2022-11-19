@@ -17,8 +17,10 @@
   /*COLOR */
   --color-neutral: #535c67;
   --color-neutral-light: #e9e9e9;
+  --color-neutral-light-2: #687079;
   --color-primary: #4169e2;
   --color-primary-dark: #000;
+  --color-primary-light: #ccc;
 
   /* UTILIY */
   --container-border-radius: 70px;
@@ -219,6 +221,7 @@ svg {
   background-position: top; */
 
   background-image: url("./assets/images/question/css_sprites.png");
+  background-size: 420.5%;
   /* background-position: -420px -10px; */
 }
 
@@ -851,5 +854,17 @@ svg {
     to {
       transform: rotate(360deg);
     }
+  }
+}
+
+/* SECTION HOVER MEDIA QUERY ----------------------------------- */
+@media (hover: hover) {
+  .button:hover {
+    background-color: var(--color-neutral-light-2);
+  }
+
+  .button-restart:hover,
+  .button-link:hover {
+    background-color: var(--color-primary-light);
   }
 }

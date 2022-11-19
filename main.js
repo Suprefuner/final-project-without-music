@@ -87,12 +87,13 @@ const renderQuestion = async () => {
     </div>
   `
 
+  const ratio = window.innerWidth > 425 ? 1 : window.innerWidth / 390
+
   questionPage.innerHTML = ``
   questionPage.insertAdjacentHTML("beforeend", markup)
-  questionPage.style.backgroundPosition = bgImagePosition
-  // questionPage.style.backgroundImage = `url('./assets/images/question/qp-${
-  //   questionIndex + 1
-  // }.png')`
+  questionPage.style.backgroundPosition = `${bgImagePosition.x * ratio}px ${
+    bgImagePosition.y * ratio
+  }px`
 }
 
 const nextQuestion = (e) => {
@@ -289,6 +290,7 @@ const renderResult = function (result) {
   // change the theme color
   r.style.setProperty("--color-primary", color.base)
   r.style.setProperty("--color-primary-dark", color.dark)
+  r.style.setProperty("--color-primary-light", color.light)
   resultPage.insertAdjacentHTML("beforeend", markup)
 }
 

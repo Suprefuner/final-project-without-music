@@ -4,7 +4,8 @@
     "name": "煙頭",
     "color": {
       "base": "#D5663B",
-      "dark": "#C57251"
+      "dark": "#C57251",
+      "light": "#F1A78A"
     },
     "pairs": {
       "best": { "name": "膠袋", "id": 4 },
@@ -24,7 +25,8 @@
     "name": "紙巾",
     "color": {
       "base": "#A1C1EC",
-      "dark": "#86A5CF"
+      "dark": "#86A5CF",
+      "light": "#C2D6F1"
     },
     "pairs": {
       "best": { "name": "膠樽蓋", "id": 10 },
@@ -44,7 +46,8 @@
     "name": "薯片袋",
     "color": {
       "base": "#AFE162",
-      "dark": "#A6CC6A"
+      "dark": "#A6CC6A",
+      "light": "#C6ED8B"
     },
     "pairs": {
       "best": { "name": "濕紙巾", "id": 6 },
@@ -64,7 +67,8 @@
     "name": "膠袋",
     "color": {
       "base": "#EFC55D",
-      "dark": "#D1B161"
+      "dark": "#D1B161",
+      "light": "#FDD779"
     },
     "pairs": {
       "best": { "name": "口罩", "id": 9 },
@@ -84,7 +88,8 @@
     "name": "膠樽",
     "color": {
       "base": "#E03F74",
-      "dark": "#A84C6A"
+      "dark": "#A84C6A",
+      "light": "#F05E8E"
     },
     "pairs": {
       "best": { "name": "紙巾袋", "id": 7 },
@@ -104,7 +109,8 @@
     "name": "濕紙巾",
     "color": {
       "base": "#04ADDC",
-      "dark": "#2F98B6"
+      "dark": "#2F98B6",
+      "light": "#71DBF9"
     },
     "pairs": {
       "best": { "name": "煙頭", "id": 1 },
@@ -124,7 +130,8 @@
     "name": "紙巾袋",
     "color": {
       "base": "#BC90E2",
-      "dark": "#A47BC8"
+      "dark": "#A47BC8",
+      "light": "#DBB8FA"
     },
     "pairs": {
       "best": { "name": "薯片袋", "id": 3 },
@@ -144,7 +151,8 @@
     "name": "汽水罐",
     "color": {
       "base": "#F39ABB",
-      "dark": "#E088A9"
+      "dark": "#E088A9",
+      "light": "#F5C4D7"
     },
     "pairs": {
       "best": { "name": "紙巾", "id": 2 },
@@ -164,7 +172,8 @@
     "name": "口罩",
     "color": {
       "base": "#00A692",
-      "dark": "#14776B"
+      "dark": "#14776B",
+      "light": "#21D3BE"
     },
     "pairs": {
       "best": { "name": "汽水罐", "id": 8 },
@@ -184,7 +193,8 @@
     "name": "膠樽蓋",
     "color": {
       "base": "#4169E2",
-      "dark": "#3250A8"
+      "dark": "#3250A8",
+      "light": "#829FF6"
     },
     "pairs": {
       "best": { "name": "口罩", "id": 9 },
