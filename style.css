@@ -426,6 +426,11 @@ svg {
   scale: 1.05;
 }
 
+.source-link:link,
+.source-link:visited {
+  color: var(--color-neutral);
+}
+
 .more-info {
   position: absolute;
   inset: 0;
@@ -763,14 +768,6 @@ svg {
     text-align: center;
   }
 
-  .source-link:link,
-  .source-link:visited {
-    color: var(--color-neutral);
-  }
-  .source-link:hover {
-    color: black;
-  }
-
   .img-container img {
     width: 100%;
   }
@@ -866,5 +863,9 @@ svg {
   .button-restart:hover,
   .button-link:hover {
     background-color: var(--color-primary-light);
+  }
+
+  .source-link:hover {
+    color: black;
   }
 }
