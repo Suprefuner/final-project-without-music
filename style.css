@@ -218,6 +218,7 @@ svg {
   background-color: #93d8f7;
 
   background-image: url("./assets/images/question/css_sprites.png");
+  background-size: 420.5%;
 }
 
 @media only screen and (min-width: 320px) {
@@ -554,23 +555,6 @@ svg {
   height: 6rem;
   text-align: center;
   line-height: 5rem;
-}
-
-/* SECTION SOUND -------------------------------------- */
-.sound-group {
-  position: absolute;
-  left: 5vw;
-  bottom: 3rem;
-}
-
-.sound-group .fas {
-  font-size: 5rem;
-  color: var(--color-neutral);
-  transition: 0.2s;
-}
-
-.sound-group .fas:hover {
-  color: black;
 }
 
 /* SECTION RWD -----------------------------------------*/
