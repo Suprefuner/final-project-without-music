@@ -567,7 +567,7 @@ svg {
     align-items: center;
     justify-content: center;
 
-    background-color: #D9E021;
+    background-color: #d9e021;
     background-image: url(./assets/images/start-page/desktop-ud-lr.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -731,8 +731,12 @@ svg {
     text-align: center;
   }
 
-  .remark a {
+  .source-link:link,
+  .source-link:visited {
     color: var(--color-neutral);
+  }
+  .source-link:hover {
+    color: black;
   }
 
   .img-container img {
@@ -747,7 +751,6 @@ svg {
     place-content: center;
 
     transition: 0.2s;
-    /* cursor: pointer; */
   }
 
   .button-container:hover {

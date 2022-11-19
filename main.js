@@ -263,7 +263,7 @@ const renderResult = function (result) {
           </button>
         </div>
         <span class="remark">資料來源 綠洲 Oasistrek 
-          <a href="www.oasistrek.com">
+          <a href="https://www.oasistrek.com/" class="source-link" target="_blank">
             www.oasistrek.com
           </a>
         </span>
