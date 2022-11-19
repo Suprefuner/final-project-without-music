@@ -567,6 +567,7 @@ svg {
     align-items: center;
     justify-content: center;
 
+    background-color: #D9E021;
     background-image: url(./assets/images/start-page/desktop-ud-lr.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -579,9 +580,7 @@ svg {
 
   main {
     width: var(--app-width);
-    /* height: var(--app-height); */
-    height: max(85vh, 80rem);
-    /* height: calc(var(--app-width) * 19 / 9); */
+    height: 80rem;
 
     border-radius: var(--border-radius-lg);
 
@@ -795,6 +794,7 @@ svg {
     width: 18rem;
     animation: rotation 60s linear infinite;
   }
+
   .one {
     transition: fill 1s;
   }
@@ -802,7 +802,6 @@ svg {
   svg:hover .one {
     fill: #df353d;
   }
-
   .two {
     fill: #ffce00;
   }
