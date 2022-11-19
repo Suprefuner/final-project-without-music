@@ -12,6 +12,7 @@
   /* SIZE */
   --wrapper-padding: 3.5rem;
   --app-width: 390px;
+  --app-height: calc(var(--app-width) * 19 / 9);
 
   /*COLOR */
   --color-neutral: #535c67;
@@ -89,6 +90,10 @@ a:visited {
   background-color: white;
   padding: var(--wrapper-padding);
   border-top-left-radius: var(--container-border-radius);
+}
+
+svg {
+  display: none;
 }
 
 /* HELPER CLASS ----------------------------------------- */
@@ -574,7 +579,8 @@ a:visited {
 
   main {
     width: var(--app-width);
-    height: 85vh;
+    /* height: var(--app-height); */
+    height: max(85vh, 80rem);
     /* height: calc(var(--app-width) * 19 / 9); */
 
     border-radius: var(--border-radius-lg);
@@ -779,9 +785,12 @@ a:visited {
 
   /* SECTION SUN ANIMATION ----------------------------------- */
   svg {
+    display: block;
+
     position: absolute;
     top: 5rem;
     left: 18rem;
+    z-index: -500;
 
     width: 18rem;
     animation: rotation 60s linear infinite;
