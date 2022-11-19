@@ -30,12 +30,6 @@ const getData = async (url) => {
 const questions = await getData("./questions.json")
 const resultData = await getData("./result.json")
 
-// BG MUSIC SETTING -----------------------------------------
-
-const getRandomNumber = () => Math.ceil(Math.random() * 5)
-bgMusic.src = `./assets/audios/bg-${getRandomNumber()}.mp3`
-bgMusic.volume = 0.3
-
 // FUNCTIONALTY >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // SHOW INFORMATION SLIDE ------------------------------------
 // SECTION
@@ -310,20 +304,6 @@ const restart = () => {
   score = 0
   questionIndex = 0
 }
-
-// CONTROL BG MUSIC -----------------------------------------------
-const controlBGMusic = function () {
-  if (bgMusic.classList.contains("music-play")) {
-    bgMusic.pause()
-    btnSoundController.innerHTML = `<i class="fas fa-volume-mute"></i>`
-  } else {
-    bgMusic.play()
-    btnSoundController.innerHTML = `<i class="fas fa-volume-up"></i>`
-  }
-  bgMusic.classList.toggle("music-play")
-}
-
-btnSoundController.addEventListener("click", controlBGMusic)
 
 // CONTROL CURSOR -----------------------------------------------
 const cursor = document.querySelector(".cursor")

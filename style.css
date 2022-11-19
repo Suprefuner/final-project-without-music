@@ -216,14 +216,8 @@ svg {
 /* SECTION QUESTION ----------------------------------*/
 .section--question {
   background-color: #93d8f7;
-  /* background-image: url("./assets/images/question/bgimage.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: top; */
 
   background-image: url("./assets/images/question/css_sprites.png");
-  background-size: 420.5%;
-  /* background-position: -420px -10px; */
 }
 
 @media only screen and (min-width: 320px) {
