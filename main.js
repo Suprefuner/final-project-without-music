@@ -66,7 +66,7 @@ btnStart.addEventListener("click", startTest)
 // RENDER QUESTIONS -----------------------------------------
 // SECTION
 const renderQuestion = async () => {
-  const { question, answers } = await questions[questionIndex]
+  const { question, answers, bgImagePosition } = await questions[questionIndex]
   const markup = `
     <div class="wrapper">
       <h2 class="question">${question}</h2>
@@ -89,9 +89,10 @@ const renderQuestion = async () => {
 
   questionPage.innerHTML = ``
   questionPage.insertAdjacentHTML("beforeend", markup)
-  questionPage.style.backgroundImage = `url('./assets/images/question/qp-${
-    questionIndex + 1
-  }.png')`
+  questionPage.style.backgroundPosition = bgImagePosition
+  // questionPage.style.backgroundImage = `url('./assets/images/question/qp-${
+  //   questionIndex + 1
+  // }.png')`
 }
 
 const nextQuestion = (e) => {
