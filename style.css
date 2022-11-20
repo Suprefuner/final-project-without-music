@@ -213,6 +213,16 @@ svg {
   translate: -50%;
 }
 
+.ig-link,
+.ig-link:link,
+.ig-link:visited {
+  color: var(--color-neutral);
+}
+
+.ig-link:hover {
+  color: black;
+}
+
 /* SECTION QUESTION ----------------------------------*/
 .section--question {
   background-color: #93d8f7;

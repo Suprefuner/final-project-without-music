@@ -272,7 +272,7 @@ const renderResult = function (result) {
           <span>我的山海日誌</span>
          </a>
         </div>
-        <div class="footer-copy-right">&copy;copyright by JJ22CM</div> 
+        <div class="footer-copy-right">&copy;copyright by <a href="https://instagram.com/jjzzcm?igshid=YmMyMTA2M2Y=" target="_blank" class="ig-link">JJ22CM</a></div> 
       </div>
     </div>
     
